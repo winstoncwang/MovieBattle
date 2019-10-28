@@ -13,3 +13,8 @@ Structure
         -Request for movie information from an api or similar
         -Formats and displays the information below
         -Compares the stats and color code the information box
+
+----------------------------------------------------------------
+Version 0.11
+
+     setup boilerplate
