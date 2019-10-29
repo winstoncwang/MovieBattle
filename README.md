@@ -18,3 +18,19 @@ Structure
 Version 0.11
 
      setup boilerplate
+----------------------------------------------------------------
+Version 0.12
+
+     axios server request added
+----------------------------------------------------------------
+Version 0.121
+
+     debouce for the input request added
+----------------------------------------------------------------
+Version 0.122
+
+     refractoring debounce
+----------------------------------------------------------------
+Version 0.123
+
+     creating util.js
