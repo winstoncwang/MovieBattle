@@ -4,9 +4,8 @@ const debounce = (func, delay = 1000) => {
 		if (timeoutId) {
 			clearTimeout(timeoutId);
 		}
-		timeoutID = setTimeout(() => {
+		timeoutId = setTimeout(() => {
 			func.apply(null, args);
 		}, delay);
-		set;
 	};
 };
