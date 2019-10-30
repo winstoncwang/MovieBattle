@@ -34,3 +34,15 @@ Version 0.122
 Version 0.123
 
      creating util.js
+----------------------------------------------------------------
+Bug fix
+
+     variable naming error to cause debounce to fail
+----------------------------------------------------------------
+Version 0.13
+
+     adding widget search result using innerHTML
+----------------------------------------------------------------
+Bug fix
+
+     catch promise resolved, search result error
