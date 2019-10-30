@@ -6,6 +6,10 @@ const fetchData = async (searchTerm) => {
 		}
 	});
 
+	if (response.data.Error) {
+		alert('Movie not found!');
+		return [];
+	}
 	return response.data.Search;
 };
 
