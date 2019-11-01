@@ -51,3 +51,11 @@ Version 0.14
 
      autocomplete widget html container, html code generated
      using javascript
+----------------------------------------------------------------
+Bug fix
+
+     movie image not available
+----------------------------------------------------------------
+Version 0.141
+
+     click to close the search result
