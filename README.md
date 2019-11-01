@@ -46,3 +46,8 @@ Version 0.13
 Bug fix
 
      catch promise resolved, search result error
+----------------------------------------------------------------
+Version 0.14
+
+     autocomplete widget html container, html code generated
+     using javascript
