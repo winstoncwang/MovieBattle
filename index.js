@@ -7,7 +7,6 @@ const fetchData = async (searchTerm) => {
 	});
 
 	if (response.data.Error) {
-		alert('Movie not found!');
 		return [];
 	}
 	return response.data.Search;
@@ -33,18 +32,20 @@ const resultsWrapper = document.querySelector('.result');
 const onInput = async (event) => {
 	const movies = await fetchData(event.target.value);
 
-	dropdown.classList.add('is-active');
+	resultsWrapper.innerHTML = '';
 	for (let movie of movies) {
 		const option = document.createElement('a');
+		const imgSrc = movie.Poster === 'N/A' ? '' : movie.Poster;
 
 		option.classList.add('dropdown-item');
 		option.innerHTML = `
-		<img src="${movie.Poster}" />
+		<img src="${imgSrc}" />
 		${movie.Title}
 		`;
 
 		resultsWrapper.appendChild(option);
 	}
+	dropdown.classList.add('is-active');
 };
 
-input.addEventListener('input', debounce(onInput, 800));
+input.addEventListener('input', debounce(onInput, 500));
