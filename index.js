@@ -32,6 +32,11 @@ const resultsWrapper = document.querySelector('.result');
 const onInput = async (event) => {
 	const movies = await fetchData(event.target.value);
 
+	if (!movies.length) {
+		dropdown.classList.remove('is-active');
+		return;
+	}
+
 	resultsWrapper.innerHTML = '';
 	for (let movie of movies) {
 		const option = document.createElement('a');
@@ -42,6 +47,11 @@ const onInput = async (event) => {
 		<img src="${imgSrc}" />
 		${movie.Title}
 		`;
+
+		option.addEventListener('click', () => {
+			dropdown.classList.remove('is-active');
+			input.value = movie.Title; // this is added when each anchor is created. each anchor has eventlistener
+		});
 
 		resultsWrapper.appendChild(option);
 	}
