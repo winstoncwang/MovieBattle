@@ -73,3 +73,12 @@ Version 0.143
 Version 0.15
 
      added movieTemplate() to render important movie details 
+----------------------------------------------------------------
+Version 0.16
+
+     refractoring autocomplete widget to be reuseable codes 
+----------------------------------------------------------------
+Version 0.161
+
+     structure createAutoComplete to call the reusable codes
+     from autocomplete.js 
