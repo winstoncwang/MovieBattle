@@ -59,3 +59,17 @@ Bug fix
 Version 0.141
 
      click to close the search result
+----------------------------------------------------------------
+Version 0.142
+
+     option to click on the search result. add eventlistener to
+     each anchor tag
+----------------------------------------------------------------
+Version 0.143
+
+     get function onMovieSelect() to display the necessary
+     information 
+----------------------------------------------------------------
+Version 0.15
+
+     added movieTemplate() to render important movie details 
