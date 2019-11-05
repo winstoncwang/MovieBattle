@@ -82,3 +82,7 @@ Version 0.161
 
      structure createAutoComplete to call the reusable codes
      from autocomplete.js 
+----------------------------------------------------------------
+Version 0.162
+
+     update createAutoComplete further to call fetchData() 
