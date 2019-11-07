@@ -86,3 +86,12 @@ Version 0.161
 Version 0.162
 
      update createAutoComplete further to call fetchData() 
+----------------------------------------------------------------
+Version 0.17
+
+     html autocomplete section seperated into columns of left
+     and right
+----------------------------------------------------------------
+Version 0.171
+
+     setting up autoCompleteConfig object for reuse
