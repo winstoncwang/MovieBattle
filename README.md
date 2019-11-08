@@ -95,3 +95,15 @@ Version 0.17
 Version 0.171
 
      setting up autoCompleteConfig object for reuse
+----------------------------------------------------------------
+Version 0.172
+
+     display summary update for both columns
+----------------------------------------------------------------
+Version 0.18
+
+     parse all movie information for future comparisons
+----------------------------------------------------------------
+Version 0.19
+
+     comparison result display added
