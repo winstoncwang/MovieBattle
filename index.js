@@ -78,9 +78,33 @@ const runComparison = () => {
 
 		if (leftValue > rightValue) {
 			rightStats.classList.remove('is-primary');
+			rightStats.classList.remove('is-warning');
+			rightStats.classList.remove('is-danger');
 			rightStats.classList.add('is-danger');
-		} else {
+
 			leftStats.classList.remove('is-primary');
+			leftStats.classList.remove('is-warning');
+			leftStats.classList.remove('is-danger');
+			leftStats.classList.add('is-primary');
+		} else if (leftValue === rightValue) {
+			rightStats.classList.remove('is-primary');
+			rightStats.classList.remove('is-warning');
+			rightStats.classList.remove('is-danger');
+			rightStats.classList.add('is-warning');
+
+			leftStats.classList.remove('is-primary');
+			leftStats.classList.remove('is-warning');
+			leftStats.classList.remove('is-danger');
+			leftStats.classList.add('is-warning');
+		} else {
+			rightStats.classList.remove('is-primary');
+			rightStats.classList.remove('is-warning');
+			rightStats.classList.remove('is-danger');
+			rightStats.classList.add('is-primary');
+
+			leftStats.classList.remove('is-primary');
+			leftStats.classList.remove('is-warning');
+			leftStats.classList.remove('is-danger');
 			leftStats.classList.add('is-danger');
 		}
 	});
