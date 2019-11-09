@@ -107,3 +107,8 @@ Version 0.18
 Version 0.19
 
      comparison result display added
+----------------------------------------------------------------
+Bug fix
+
+     equal comparison result and correct display after equal
+     comparison
