@@ -1,6 +1,7 @@
 const autoCompleteConfig = {
 	renderOption(movie) {
-		const imgSrc = movie.Poster === 'N/A' ? '' : movie.Poster;
+		const imgSrc =
+			movie.Poster === 'N/A' ? '' : movie.Poster;
 		return `
 		<img src="${imgSrc}" />
 		${movie.Title} (${movie.Year})
@@ -10,12 +11,15 @@ const autoCompleteConfig = {
 		return movie.Title;
 	},
 	async fetchData(searchTerm) {
-		const response = await axios.get('http://www.omdbapi.com/', {
-			params : {
-				apikey : '5b820cab',
-				s      : searchTerm
+		const response = await axios.get(
+			'https://www.omdbapi.com/',
+			{
+				params : {
+					apikey : '5b820cab',
+					s      : searchTerm
+				}
 			}
-		});
+		);
 
 		if (response.data.Error) {
 			return [];
@@ -26,18 +30,26 @@ const autoCompleteConfig = {
 
 createAutoComplete({
 	...autoCompleteConfig,
-	root           : document.querySelector('#left-autocomplete'),
+	root           : document.querySelector(
+		'#left-autocomplete'
+	),
 	onOptionSelect(movie) {
-		document.querySelector('.tutorial').classList.add('is-hidden');
+		document
+			.querySelector('.tutorial')
+			.classList.add('is-hidden');
 		onMovieSelect(movie, '#left-summary', 'left');
 	}
 });
 
 createAutoComplete({
 	...autoCompleteConfig,
-	root           : document.querySelector('#right-autocomplete'),
+	root           : document.querySelector(
+		'#right-autocomplete'
+	),
 	onOptionSelect(movie) {
-		document.querySelector('.tutorial').classList.add('is-hidden');
+		document
+			.querySelector('.tutorial')
+			.classList.add('is-hidden');
 		onMovieSelect(movie, '#right-summary', 'right');
 	}
 });
@@ -46,14 +58,19 @@ let leftMovie;
 let rightMovie;
 
 const onMovieSelect = async (movie, summaryTag, side) => {
-	const response = await axios.get('http://www.omdbapi.com/', {
-		params : {
-			apikey : '5b820cab',
-			i      : movie.imdbID
+	const response = await axios.get(
+		'https://www.omdbapi.com/',
+		{
+			params : {
+				apikey : '5b820cab',
+				i      : movie.imdbID
+			}
 		}
-	});
+	);
 	//console.log(response.data);
-	document.querySelector(summaryTag).innerHTML = movieTemplate(response.data);
+	document.querySelector(
+		summaryTag
+	).innerHTML = movieTemplate(response.data);
 
 	if (side === 'left') {
 		leftMovie = response.data;
@@ -67,14 +84,20 @@ const onMovieSelect = async (movie, summaryTag, side) => {
 };
 
 const runComparison = () => {
-	const leftSideStats = document.querySelectorAll('#left-summary .notification');
-	const rightSideStats = document.querySelectorAll('#right-summary .notification');
+	const leftSideStats = document.querySelectorAll(
+		'#left-summary .notification'
+	);
+	const rightSideStats = document.querySelectorAll(
+		'#right-summary .notification'
+	);
 
 	leftSideStats.forEach((leftStats, index) => {
 		const rightStats = rightSideStats[index];
 
 		const leftValue = parseInt(leftStats.dataset.value);
-		const rightValue = parseInt(rightStats.dataset.value);
+		const rightValue = parseInt(
+			rightStats.dataset.value
+		);
 
 		if (leftValue > rightValue) {
 			rightStats.classList.remove('is-primary');
@@ -111,20 +134,28 @@ const runComparison = () => {
 };
 
 const movieTemplate = (movieDetail) => {
-	const dollars = parseInt(movieDetail.BoxOffice.replace(/\$/g, '').replace(/,/g, ''));
+	const dollars = parseInt(
+		movieDetail.BoxOffice
+			.replace(/\$/g, '')
+			.replace(/,/g, '')
+	);
 	const metascore = parseInt(movieDetail.Metascore);
 	const imdbRating = parseFloat(movieDetail.imdbRating);
-	const imdbVotes = parseInt(movieDetail.imdbVotes.replace(/,/g, ''));
+	const imdbVotes = parseInt(
+		movieDetail.imdbVotes.replace(/,/g, '')
+	);
 
 	let count = 0;
-	const awards = movieDetail.Awards.split(' ').reduce((acc, cur) => {
-		const value = parseInt(cur);
-		if (isNaN(value)) {
-			return acc;
-		} else {
-			return acc + value;
-		}
-	}, 0);
+	const awards = movieDetail.Awards
+		.split(' ')
+		.reduce((acc, cur) => {
+			const value = parseInt(cur);
+			if (isNaN(value)) {
+				return acc;
+			} else {
+				return acc + value;
+			}
+		}, 0);
 
 	return `
 	<article class="media">

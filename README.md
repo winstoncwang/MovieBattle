@@ -111,4 +111,12 @@ Version 0.19
 Bug fix
 
      equal comparison result and correct display after equal
+<<<<<<< HEAD
      comparison
+=======
+     comparison
+----------------------------------------------------------------
+Bug fix
+
+     mixed content error fix on Github display
+>>>>>>> Version-0.1
