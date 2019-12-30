@@ -112,3 +112,7 @@ Bug fix
 
      equal comparison result and correct display after equal
      comparison
+----------------------------------------------------------------
+Bug fix
+
+     mixed content error fix on Github display
